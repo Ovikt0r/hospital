@@ -1,0 +1,17 @@
+<configuration>
+    <property scope="context" name="CONTEXT_NAME" value="${LOGBACK_CONTEXT_NAME:-hospital}"/>
+    <contextName>${CONTEXT_NAME}</contextName>
+    <jmxConfigurator/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{1}:%line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.oviktor" level="DEBUG"/>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
